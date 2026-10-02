@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ulysses S. Grant | A Nation United</title>
+
+<style>
+:root {
+    --navy: #071a33;
+    --blue: #123c69;
+    --red: #b22234;
+    --cream: #f7f3e8;
+    --gold: #d4af37;
+    --white: #ffffff;
+    --gray: #e8e8e8;
+    --dark: #17202a;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+header {
+    background: var(--navy);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0,0,0,.3);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: .95rem;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 60px 20px;
+    background:
+        linear-gradient(rgba(7,26,51,.82), rgba(7,26,51,.88)),
+        radial-gradient(circle at center, #315b88, #071a33);
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 8vw, 6rem);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 25px;
+    background: var(--red);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #8e1929;
+    transform: translateY(-2px);
+}
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 2.6rem;
+    color: var(--navy);
+}
+
+.section-title p {
+    color: #666;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.portrait {
+    background: var(--navy);
+    color: white;
+    padding: 35px;
+    text-align: center;
+    border: 8px solid var(--gold);
+}
+
+.portrait .initials {
+    font-size: 6rem;
+    font-weight: bold;
+}
+
+.portrait h3 {
+    font-size: 1.5rem;
+}
+
+.bio p {
+    margin-bottom: 18px;
+}
+
+.issues {
+    background: white;
+    max-width: none;
+}
+
+.issue-grid {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.issue-card {
+    padding: 30px;
+    border-top: 5px solid var(--red);
+    background: #fafafa;
+    box-shadow: 0 4px 15px rgba(0,0,0,.08);
+}
+
+.issue-card h3 {
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.appeal {
+    background: var(--navy);
+    color: white;
+    max-width: none;
+    text-align: center;
+}
+
+.appeal-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.appeal h2 {
+    color: var(--gold);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.notice {
+    margin-top: 20px;
+    font-size: .9rem;
+    color: #cbd5e1;
+}
+
+.store {
+    background: var(--cream);
+}
+
+.store-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.product {
+    background: white;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.product-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.product h3 {
+    color: var(--navy);
+}
+
+.price {
+    color: var(--red);
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product button {
+    border: none;
+    background: var(--blue);
+    color: white;
+    padding: 9px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product button:hover {
+    background: var(--red);
+}
+
+.events {
+    background: white;
+}
+
+.event-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.event {
+    display: flex;
+    border-left: 6px solid var(--red);
+    background: #f8f8f8;
+    padding: 20px;
+}
+
+.date {
+    min-width: 95px;
+    font-weight: bold;
+    color: var(--navy);
+}
+
+.event h3 {
+    margin-bottom: 5px;
+}
+
+.sources {
+    background: #eee;
+    max-width: none;
+}
+
+.sources-inner {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.sources a {
+    color: var(--blue);
+}
+
+footer {
+    background: #040d19;
+    color: #ddd;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+@media (max-width: 900px) {
+    .store-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-grid,
+    .issue-grid,
+    .event-list {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .store-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        letter-spacing: 2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+        <div class="logo">GRANT <span>1872</span></div>
+
+        <nav>
+            <a href="#biography">Biography</a>
+            <a href="#issues">Issues</a>
+            <a href="#appeal">Appeal</a>
+            <a href="#store">Store</a>
+            <a href="#events">Events</a>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Ulysses S. Grant</h1>
+        <h2>A Nation United</h2>
+
+        <p>
+            A historical campaign website exploring the life, presidency,
+            policies, and political era of America's 18th president.
+        </p>
+
+        <a class="btn" href="#biography">Explore the Campaign</a>
+    </div>
+</section>
+
+<section id="biography">
+
+    <div class="section-title">
+        <h2>Candidate Biography</h2>
+        <p>Ulysses Simpson Grant — 1822–1885</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="portrait">
+            <div class="initials">USG</div>
+            <h3>Ulysses S. Grant</h3>
+            <p>18th President of the United States</p>
+            <p>1869–1877</p>
+        </div>
+
+        <div class="bio">
+
+            <p>
+                Ulysses S. Grant was born on April 27, 1822, in Point Pleasant,
+                Ohio. He attended the United States Military Academy at West
+                Point and served in the U.S. Army during the Mexican-American
+                War. After leaving the military for a period, Grant returned
+                to service when the Civil War began in 1861.
+            </p>
+
+            <p>
+                Grant quickly became one of the Union's most important military
+                commanders. His victories at Fort Donelson and Vicksburg helped
+                establish his reputation as a determined strategist. In 1864,
+                President Abraham Lincoln placed Grant in command of all Union
+                armies. Grant directed the campaigns that eventually forced
+                Confederate General Robert E. Lee to surrender at Appomattox
+                Court House in April 1865.
+            </p>
+
+            <p>
+                Following the Civil War, Grant entered national politics. The
+                Republican Party nominated him for president in 1868. Grant won
+                the election and became the 18th president of the United States.
+                His administration focused heavily on Reconstruction, the
+                enforcement of civil and political rights, and maintaining the
+                Union established by the Civil War.
+            </p>
+
+            <p>
+                During his presidency, Grant supported the Fifteenth Amendment,
+                which prohibited denying voting rights on the basis of race,
+                color, or previous condition of servitude. His administration
+                also supported federal enforcement against organizations such
+                as the Ku Klux Klan. In 1875, Grant signed the Civil Rights Act
+                of 1875, which addressed equal access to public accommodations
+                and jury service.
+            </p>
+
+            <p>
+                Grant also faced major economic questions. He generally favored
+                a stable currency and supported returning the country toward
+                specie payments. The Specie Resumption Act of 1875 established
+                a plan for redeeming paper currency in coin beginning in 1879.
+                His presidency also included efforts to reform federal Indian
+                policy, although the results of these policies were complicated
+                and often fell short of their stated goals.
+            </p>
+
+            <p>
+                Grant served two presidential terms, leaving office in 1877.
+                He later wrote his memoirs while suffering from throat cancer.
+                The memoirs were published shortly after his death on July 23,
+                1885. Today, Grant's presidency is studied for its role in
+                Reconstruction, civil rights enforcement, economic policy, and
+                the challenges of governing the United States after the Civil
+                War.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+<section id="issues" class="issues">
+
+    <div class="section-title">
+        <h2>Issue Positions</h2>
+        <p>Documented positions associated with Grant's presidency</p>
+    </div>
+
+    <div class="issue-grid">
+
+        <div class="issue-card">
+            <h3>Reconstruction & Civil Rights</h3>
+            <p>
+                Grant supported federal efforts to protect the civil and
+                political rights of formerly enslaved African Americans during
+                Reconstruction. His administration supported enforcement
+                legislation designed to protect voting rights and combat
+                political violence. Grant also supported the Fifteenth
+                Amendment and signed the Civil Rights Act of 1875.
+            </p>
+        </div>
+
+        <div class="issue-card">
+            <h3>Voting Rights</h3>
+            <p>
+                Grant regarded voting rights as an important part of citizenship
+                after the Civil War. His administration supported federal
+                enforcement when violence and intimidation were used to prevent
+                African Americans from exercising political rights. The
+                Enforcement Acts gave the federal government additional tools
+                to address these violations.
+            </p>
+        </div>
+
+        <div class="issue-card">
+            <h3>Currency & Economy</h3>
+            <p>
+                Grant generally favored a stable currency and opposed policies
+                that he believed would create excessive inflation. He supported
+                returning the nation's currency toward a specie basis. In 1875,
+                he approved the Specie Resumption Act, which established a
+                timetable for redeeming certain paper currency in coin.
+            </p>
+        </div>
+
+        <div class="issue-card">
+            <h3>National Unity</h3>
+            <p>
+                Grant emphasized preserving the Union and restoring peace after
+                the Civil War. In his inaugural addresses, he called for
+                reconciliation while also supporting enforcement of federal
+                law. His administration therefore attempted to balance national
+                reunification with protection of constitutional rights.
+            </p>
+        </div>
+
+        <div class="issue-card">
+            <h3>Native American Policy</h3>
+            <p>
+                Grant attempted to change federal policy toward Native American
+                nations through what became known as the Peace Policy. The
+                approach emphasized reservation life, education, religious
+                organizations, and eventual citizenship. Historians note that
+                the policy had significant limitations and did not eliminate
+                conflict or the broader pressures placed on Native communities.
+            </p>
+        </div>
+
+        <div class="issue-card">
+            <h3>Foreign Relations</h3>
+            <p>
+                Grant's inaugural statements emphasized treating other nations
+                according to principles of international law and respecting the
+                rights of other countries while protecting American citizens.
+                His administration also pursued commercial and diplomatic
+                relationships, including the Treaty of Washington with Britain
+                in 1871.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section id="appeal" class="appeal">
+
+    <div class="appeal-content">
+
+        <h2>Support the History Project</h2>
+
+        <p>
+            This classroom website is a historical simulation of a 19th-century
+            presidential campaign presented through the design language of a
+            modern campaign website.
+        </p>
+
+        <p>
+            Instead of collecting real political contributions, this project
+            invites visitors to support historical education by exploring the
+            primary sources, speeches, and events connected with Grant's
+            presidency.
+        </p>
+
+        <p class="notice">
+            Educational simulation — no real political donations are accepted.
+        </p>
+
+    </div>
+
+</section>
+
+<section id="store" class="store">
+
+    <div class="section-title">
+        <h2>Campaign Store</h2>
+        <p>Historical-themed classroom merchandise</p>
+    </div>
+
+    <div class="store-grid">
+
+        <div class="product">
+            <div class="product-icon">🎩</div>
+            <h3>Grant Top Hat</h3>
+            <div class="price">$25</div>
+            <button onclick="alert('Historical mock-store item selected!')">
+                View Item
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="product-icon">📜</div>
+            <h3>Campaign Poster</h3>
+            <div class="price">$12</div>
+            <button onclick="alert('Historical mock-store item selected!')">
+                View Item
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="product-icon">☕</div>
+            <h3>Grant Mug</h3>
+            <div class="price">$15</div>
+            <button onclick="alert('Historical mock-store item selected!')">
+                View Item
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="product-icon">📖</div>
+            <h3>Grant Biography</h3>
+            <div class="price">$20</div>
+            <button onclick="alert('Historical mock-store item selected!')">
+                View Item
+            </button>
+        </div>
+
+        <div class="product">
+            <div class="product-icon">⭐</div>
+            <h3>Union Pin</h3>
+            <div class="price">$8</div>
+            <button onclick="alert('Historical mock-store item selected!')">
+                View Item
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<section id="events" class="events">
+
+    <div class="section-title">
+        <h2>Events Calendar</h2>
+        <p>Historical events for this classroom simulation</p>
+    </div>
+
+    <div class="event-list">
+
+        <div class="event">
+            <div class="date">APR 27</div>
+            <div>
+                <h3>Grant's Birthday</h3>
+                <p>Point Pleasant, Ohio — 1822</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">MAR 4</div>
+            <div>
+                <h3>First Inauguration</h3>
+                <p>Washington, D.C. — 1869</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">MAR 30</div>
+            <div>
+                <h3>Fifteenth Amendment</h3>
+                <p>Federal voting-rights milestone — 1870</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">JUN 22</div>
+            <div>
+                <h3>Department of Justice</h3>
+                <p>Federal government milestone — 1870</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">MAY 8</div>
+            <div>
+                <h3>Treaty of Washington</h3>
+                <p>International diplomacy — 1871</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">JUN 5</div>
+            <div>
+                <h3>Yellowstone National Park</h3>
+                <p>National conservation milestone — 1872</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">MAR 1</div>
+            <div>
+                <h3>Civil Rights Act</h3>
+                <p>Grant signs the Civil Rights Act — 1875</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">JAN 14</div>
+            <div>
+                <h3>Specie Resumption Act</h3>
+                <p>Grant approves monetary legislation — 1875</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">MAR 4</div>
+            <div>
+                <h3>Second Inauguration</h3>
+                <p>Washington, D.C. — 1873</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="date">MAR 4</div>
+            <div>
+                <h3>End of Presidency</h3>
+                <p>Grant's second term concludes — 1877</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="sources">
+
+    <div class="sources-inner">
+
+        <div class="section-title">
+            <h2>Historical Sources</h2>
+        </div>
+
+        <p>
+            This website is a classroom historical simulation. Information
+            about Grant's presidency was adapted from presidential speeches
+            and historical research.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Sources:</strong>
+        </p>
+
+        <p>
+            Miller Center — Ulysses S. Grant:
+            <a href="https://millercenter.org/president/ulysses-s-grant/key-events"
+               target="_blank">
+               Key Events
+            </a>
+        </p>
+
+        <p>
+            Miller Center — Grant Domestic Affairs:
+            <a href="https://millercenter.org/president/grant/domestic-affairs"
+               target="_blank">
+               Domestic Affairs
+            </a>
+        </p>
+
+        <p>
+            Grant's First Inaugural Address:
+            <a href="https://millercenter.org/the-presidency/presidential-speeches/march-4-1869-first-inaugural-address"
+               target="_blank">
+               Read the Speech
+            </a>
+        </p>
+
+        <p>
+            Grant's Second Inaugural Address:
+            <a href="https://millercenter.org/the-presidency/presidential-speeches/march-4-1873-second-inaugural-address"
+               target="_blank">
+               Read the Speech
+            </a>
+        </p>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>
+        <strong>GRANT 1872</strong>
+    </p>
+
+    <p>
+        Historical classroom project — not an actual political campaign.
+    </p>
+
+    <p>
+        © 2026 Student Project
+    </p>
+</footer>
+
+<script>
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.querySelector('nav').classList.remove('open');
+    });
+});
+</script>
+
+</body>
+</html>
